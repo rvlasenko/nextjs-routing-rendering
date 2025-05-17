@@ -7,7 +7,11 @@ export const metadata = {
   description: "How to route to different pages.",
 };
 
-export default function ContentLayout({ children }) {
+export default function ContentLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>

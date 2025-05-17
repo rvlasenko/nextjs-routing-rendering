@@ -1,4 +1,10 @@
-export default function Layout({ archive, latest }) {
+export default function Layout({
+  archive,
+  latest,
+}: {
+  archive: React.ReactNode;
+  latest: React.ReactNode;
+}) {
   return (
     <div>
       <h1>Archive</h1>

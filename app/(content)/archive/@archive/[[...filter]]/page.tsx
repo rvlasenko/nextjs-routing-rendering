@@ -8,7 +8,13 @@ import {
 import Link from "next/link";
 import { Suspense } from "react";
 
-async function FilterHeader({ year, month }) {
+async function FilterHeader({
+  year,
+  month,
+}: {
+  year?: string;
+  month?: string;
+}) {
   const availableYears = await getAvailableNewsYears();
   const availableMonths = getAvailableNewsMonths(year);
 
@@ -47,7 +53,13 @@ async function FilterHeader({ year, month }) {
   );
 }
 
-async function FilteredNews({ year, month }) {
+async function FilteredNews({
+  year,
+  month,
+}: {
+  year?: string;
+  month?: string;
+}) {
   let news;
 
   if (year && !month) {
@@ -65,7 +77,11 @@ async function FilteredNews({ year, month }) {
   return newsContent;
 }
 
-export default async function FilteredNewsPage({ params }) {
+export default async function FilteredNewsPage({
+  params,
+}: {
+  params: { filter: string[] };
+}) {
   const filter = params.filter;
   const selectedYear = filter?.[0];
   const selectedMonth = filter?.[1];

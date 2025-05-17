@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-export default function NewsList({ news }) {
+export interface NewsItem {
+  id: string;
+  title: string;
+  slug: string;
+  image: string;
+}
+
+export default function NewsList({ news }: { news: NewsItem[] }) {
   return (
     <ul className="news-list">
       {news.map((newsItem) => (

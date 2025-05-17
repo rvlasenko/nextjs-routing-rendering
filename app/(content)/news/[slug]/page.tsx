@@ -2,7 +2,11 @@ import { getNewsItem } from "@/lib/news";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export default async function NewsDetailsPage({ params }) {
+export default async function NewsDetailsPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const newsSlug = params.slug;
   const newsItem = await getNewsItem(newsSlug);
 
